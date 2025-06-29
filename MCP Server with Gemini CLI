@@ -1,0 +1,46 @@
+# MCP Server: Seamlessly Route to Claude and Gemini AI
+
+This project is a custom-built "Master Control Program" (MCP) server designed to act as a unified gateway for interacting with both Anthropic's Claude AI and Google's Gemini AI. It provides a simple, efficient, and centralized way to send prompts to either model and receive their responses.
+
+## Why This Server is Unique and Efficient
+
+The primary goal of this server is to automate and streamline tasks by leveraging the strengths of different AI models. Here's what makes it special:
+
+*   **Dual AI Integration:** Instead of being locked into a single AI provider, this server allows you to choose the best model for a specific task on the fly. You can switch between Claude and Gemini with a simple selection.
+*   **Centralized API Management:** It simplifies API key management by using a single `.env` file to store your credentials securely. This is much more efficient and secure than hardcoding keys into different scripts.
+*   **Simple Web Interface:** I added a clean and simple web UI to make the server incredibly easy to use. This was a key addition for efficiency because it removes the need to use command-line tools like `curl` or write separate scripts for every interaction. It provides a user-friendly way to test prompts, compare model outputs, and interact with the server from any browser.
+*   **Lightweight and Self-Hosted:** The server is built with Node.js and Express, making it lightweight and fast. Since you run it on your own machine, you have full control over your data and how the server operates.
+
+## How It Was Made
+
+The MCP server is built with a modern and widely-used stack:
+
+*   **Backend:** Node.js with the Express.js framework to create the web server and API endpoint.
+*   **API Communication:** The `axios` library is used to make HTTP requests to the Claude and Gemini APIs.
+*   **Frontend:** A simple and clean user interface built with plain HTML, CSS, and JavaScript. It allows you to enter a prompt, select the AI model, and view the response directly on the page.
+*   **Security:** The `dotenv` library is used to load your API keys from a `.env` file, keeping them out of your main codebase.
+
+## How to Use the MCP Server
+
+1.  **Place the `mcp-server` directory in your desired location.**
+2.  **Navigate to the directory in your terminal:**
+    ```bash
+    cd path/to/mcp-server
+    ```
+3.  **Install the dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Add your API keys:**
+    *   Open the `.env` file.
+    *   Replace `YOUR_CLAUDE_API_KEY` with your actual Claude API key.
+    *   Replace `YOUR_GEMINI_API_KEY` with your actual Gemini API key.
+5.  **Start the server:**
+    ```bash
+    node server.js
+    ```
+6.  **Open your browser** and go to `http://localhost:3000` to start using the MCP server.
+
+---
+
+This server provides a solid foundation for building more complex AI-powered automations. You can extend it to log conversations, preprocess prompts, or even chain requests between models for more sophisticated workflows.
